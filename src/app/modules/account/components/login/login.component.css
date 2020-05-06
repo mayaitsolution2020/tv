@@ -1,0 +1,66 @@
+.login_box {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 38px;
+    border-radius: 9px;
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.1);
+
+}
+.login_box input {
+
+    height: 43px !important;
+
+}
+.login_section {
+    float: left;
+    width: 100%;
+    margin-top: 22px;
+}
+.login_section .form-group input {
+    height: 39px;
+    border-radius: 6px;
+}
+.form-group button.btn.btn-primary {
+padding: 7px 24px !important;
+text-transform: uppercase;
+font-size: 14px;
+width: 100%;
+border-radius: 6px;
+height: 43px !important;
+font-weight: 600;
+font-family: arial;
+font-size: 17px;
+margin-top: 7px;
+
+}
+.form-group a.btn.btn-link {
+    font-size: 15px;
+}
+.login_box h2{
+
+    font-size: 24px;
+    text-align: center;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+.banner-secrion.main_banner.ads_section {
+	display: none !important;
+}
+.form-group a {
+    padding-top: 14px;
+
+    color: #000;
+    font-size: 17px !important;
+
+}
+.form-group a:nth-child(2) {
+
+    float: right;
+    color: #000;
+    font-size: 17px !important;
+
+}

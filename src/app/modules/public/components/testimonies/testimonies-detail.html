@@ -1,0 +1,19 @@
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <div class="product_section PinkAffiliate">
+            <div class="share_button details-page">
+                <fb-like class="img-share" url="{{baseUrl}}{{testimonie?.Image}}"></fb-like>
+            </div>
+            <div class="share_button details-page">
+                <fb-like class="img-share" url={{Image}}></fb-like>
+                <tweet class="img-share" url={{Image}}></tweet>
+            </div>
+            <button mat-stroked-button class="common-button" [routerLink]="['/testimonies']">Back</button>
+            <main class="site-main testimonie">
+
+                <a><img src="{{baseUrl}}{{testimonie?.Image}}"></a>
+            </main>
+        </div>
+    </div>
+</section>

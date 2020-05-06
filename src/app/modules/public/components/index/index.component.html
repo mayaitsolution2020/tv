@@ -1,0 +1,42 @@
+<div class="post-section">
+    <div class="container">
+
+
+        <div class="live_class_left_side">
+            <div class="col-lg-6 col-sm-6 portfolio-item liveclass">
+
+                <div class="card h-101">
+                    <h1 class="top_title new_class"> Happening Now </h1>
+                    <a target="_blank" href="https://youtu.be/GBJL6AoQs80"><img class="card-img-top" src="../../../assets/img/Live-Class-Up.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-sm-12 portfolio-item liveclass">
+                <h1 class="top_title upcomming_class"> Sign Up For An Upcoming Class </h1>
+                <div class="card h-101">
+                    <a target="_blank" href="{{WebinarLink}}"><img src="{{baseUrl}}{{Image}}" class="card-img-top" alt=""></a>
+                </div>
+            </div>
+            <div class="row">
+                <div *ngFor="let classmeeting of othermeeting" class="col-lg-6 col-sm-6 portfolio-item">
+                    <div class="card h-100">
+                        <a target="_blank" href="{{classmeeting?.WebinarLink}}"><img class="card-img-top" src="{{baseUrl}}{{classmeeting?.Image}}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="live_class_right_side">
+            <div class="travis_intro">
+                <a mat-raised-button (click)="openDialog()"><img class="card-img-top" src="../../../assets/img/pc_img.png" alt=""></a>
+            </div>
+
+            <div class="travis_store">
+                <h1>Shibboleth Amazon Store</h1>
+                <div class="store_product" [routerLink]="['/products']">
+                    <img class="card-img-top" src="../../../assets/img/1.jpg" alt="">
+                    <h3>Disposable Bento Lunch Box Set – 20-Pack</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

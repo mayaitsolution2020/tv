@@ -1,0 +1,13 @@
+.w3-container{
+    background: #fff;
+    padding: 23px;
+    border-radius: 6px;
+    box-shadow: 0 4px 17px 0 rgba(0,0,0,0.1);
+    min-height: 400px;
+    float: left;
+    width: 100%;
+    margin-top: 0;
+}
+h1.ShibbolethAmazonStore {
+    line-height: 50px;
+}

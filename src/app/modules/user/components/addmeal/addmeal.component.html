@@ -1,0 +1,602 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>Custom Meal Plan - Shibboleth</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/Content/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .container.logo-section {
+            max-width: 1140px !important;
+        }
+        
+        #overlay {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 101vw;
+            height: 101vh;
+            text-align: center;
+            z-index: 1111;
+        }
+        
+        .modal-dialog {
+            max-width: 700px;
+        }
+        
+        .modal {
+            padding-top: 0;
+        }
+        
+        iframe#iFrame {
+            width: 670px;
+            height: 560px;
+            border: 2px solid #ccc;
+            padding: 11px;
+            background: #fff;
+            border-radius: 5px;
+            /*margin-top: 52px;*/
+        }
+        
+        button.close {
+            background: #fff none repeat scroll 0 0 !important;
+            border: 1px solid #d0d0d0 !important;
+            border-radius: 100%;
+            height: 40px;
+            left: -5px !important;
+            top: 15px;
+            right: 35px;
+            margin-top: -31px !important;
+            opacity: 1 !important;
+            padding: 0 !important;
+            position: absolute;
+            width: 40px;
+        }
+        
+        .tab-profile-section {
+            overflow: hidden;
+        }
+        
+        .row.form-section {
+            margin-left: 22px !important;
+        }
+        
+        .row.form-section {
+            margin-right: 0 !important;
+        }
+        
+        .logo-section {
+            background-color: #007aff;
+            color: white;
+            padding: 3px 0;
+        }
+        
+        .logo-section {
+            color: white;
+        }
+        
+        .login {
+            margin-top: 22px;
+        }
+        
+        .social-media {
+            margin-top: 15px;
+        }
+        
+        .login button {
+            float: right;
+            font-family: arial !important;
+            font-size: 13px;
+            font-weight: 400;
+            margin-right: 6px;
+            text-align: right !important;
+            text-transform: uppercase;
+        }
+        
+        .btn-brown {
+            background-color: hsl(27, 10%, 40%);
+            background-image: linear-gradient(#95887d, #70645b);
+            background-repeat: repeat-x;
+            border-color: #70645b #70645b hsl(27, 10%, 36.5%);
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+        }
+        
+        .login a {
+            float: right;
+            font-family: arial !important;
+            font-size: 13px;
+            font-weight: 400;
+            margin-right: 6px;
+            text-align: right !important;
+            text-transform: uppercase;
+        }
+        
+        .btn-warning {
+            background-color: #f0ad4e;
+            border-color: #eea236;
+            color: #fff;
+        }
+        
+        .social-media ul {
+            list-style: outside none none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+        
+        .social-media ul li:first-child {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+            height: auto !important;
+            margin-right: 19px;
+            width: auto !important;
+        }
+        
+        .social-media ul li {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 100%;
+            color: #007aff;
+            height: 35px;
+            width: 35px;
+        }
+        
+        .social-media ul li a {
+            color: #fff;
+        }
+        
+        .whatapp a {
+            font-size: 25px !important;
+            font-weight: 700;
+        }
+        
+        .fa.fa-whatsapp {
+            font-size: 41px;
+            margin-right: 10px;
+        }
+        
+        .bg-color .fa {
+            color: #007aff;
+            font-size: 20px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .social-media ul li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .social-media ul li {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 100%;
+            color: #007aff;
+            height: 35px;
+            width: 35px;
+        }
+        
+        .container {
+            margin: 0 auto;
+            max-width: 100% !important;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .col-lg-12.save-data {
+            margin-bottom: 62px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .save-data .btn.btn-primary {
+            background: #007bff none repeat scroll 0 0 !important;
+            font-weight: 700 !important;
+            padding: 11px !important;
+            width: 200px !important;
+        }
+        
+        .category-list textarea {
+            width: 99% !important;
+        }
+        
+        input {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+            border: medium none moccasin;
+            font-size: 18px;
+            padding: 0;
+            width: 100% !important;
+            outline: none;
+        }
+        
+        .note {
+            float: left;
+            padding-left: 25px;
+            width: 100%;
+        }
+        
+        textarea {
+            border: 2px solid;
+            font-family: arial;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 9px;
+            width: 94.8% !important;
+            height: 150px;
+        }
+        
+        @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+            .btn.btn-warning.home {
+                float: right !important;
+            }
+            .col-lg-3.col-md-3.logo {
+                text-align: center !important;
+            }
+        }
+        
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            .logo img.logo-img {
+                margin-top: 15px;
+                width: 200px;
+                margin-left: 6px !important;
+            }
+            .login a.btn.btn-warning.home b {
+                margin-right: 35px !important;
+                text-align: center !important;
+            }
+            .login .btn.btn-brown.logout {
+                width: 80% !important;
+                text-align: center !important;
+                margin-top: -8px !important;
+            }
+            .login a.btn.btn-warning.home {
+                width: 80% !important;
+                margin-bottom: 14px !important;
+            }
+            .login a.btn.btn-warning.home {
+                margin-top: 3px !important;
+                margin-left: 28px !important;
+            }
+            a.btn.btn-warning.join-our {
+                width: 80%;
+                margin-left: 37px !important;
+                margin-top: 3px !important;
+            }
+            a.btn.btn-warning.join-our b {
+                margin-left: -20px !important;
+            }
+        }
+        
+        @media only screen and (min-device-width: 1024px) and (max-device-width: 1199px) {
+            a.btn.btn-warning.join-our b {
+                margin-left: -30px !important;
+            }
+            a.btn.btn-warning.home {
+                width: 25% !important;
+            }
+            .btn.btn-warning.home {
+                float: left;
+                margin-left: -38px;
+            }
+            .login a.btn.btn-warning.home b {
+                margin-left: -8px !important;
+            }
+            a.btn.btn-warning.join-our {
+                width: 50% !important;
+                margin-left: -2px !important;
+            }
+            .logo-img {
+                width: 100%;
+                max-width: 200px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="padding: 0px; margin: 0px; background:#F2F2F2;">
+    <section class="logo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 logo">
+
+
+                    <a [routerLink]="['/challenge']" class="">
+                        <img title="Home page" alt="Shibboleth!" src="assets/challengeimages/logo.png" class="logo-img">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-3 login">
+                    <form action="/Home/Logout" method="post"><input name="__RequestVerificationToken" type="hidden" value="ZHgHu3lg-gbxGnxB_w5lzTXLsz6T4kmD14x7QfjBV61fAmJo2Rg_RQYKUssmVO81PPGtvEKEfgTUyPXa6hADBMHWh557DhrvucwxafPHS37U8YhX2VvIdKGvdiv2lCv30"> <button type="submit" class="btn btn-brown logout">LOGOUT</button>
+                    </form> <a class="btn btn-warning join-our" id="joinour" data-toggle="modal" href="#joinourModal"><b>JOIN OUR LIST</b></a>
+                    <a [routerLink]="['/challenge']" class="btn btn-warning home"><b>Home</b></a>
+                </div>
+                <div class="col-lg-5 col-md-6 social-media">
+                    <ul>
+                        <li class="whatapp"><a target="_blank" href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i>470-227-7528</a></li>
+                        <li class="bg-color"><a target="_blank" href="https://twitter.com/travismartintv7"><i class="fa fa-twitter"></i></a></li>
+                        <li class="bg-color facebook"><a target="_blank" href="https://www.facebook.com/travismartin777"><i class="fa fa-facebook"></i></a></li>
+                        <li class="bg-color"><a target="_blank" href="https://www.youtube.com/user/TravisMartintTV"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        <li class="bg-color"><a target="_blank" href="https://www.instagram.com/travisjack777/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="bg-color"><a target="_blank" href="https://www.blogtalkradio.com/myshibboleth"><i class="fa fa-volume-up" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="/Home/Index" class="">
+        <img src="assets/challengeimages/top-banner.jpg" alt="Shibboleth!" title="Home page" style="width: 100%;">
+    </a>
+
+    <form action="/Home/CustomMealPlan" method="post">
+        <div class="container" style=" margin: 0 auto;padding: 0;width: 1100px !important;">
+            <section class="tab-profile-section">
+                <div class="right-side tab-section-btn">
+                    <div class="row form-section" style="float: left; width: 100%; margin-top: 20px; margin-bottom: 30px;">
+                        <div class="form-group " style=" float: left;width: 500px;  margin-bottom: 22px;  margin-top: 20px;">
+                            <label class=" name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Title :</label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 413px;">
+                                <input class="text-box single-line" data-val="true" data-val-required="Title is Required" id="Title" name="Title" type="text" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style=" float: left;width: 580px;  margin-bottom: 22px;  margin-top: 20px;">
+                            <label class="name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Description :</label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 425px;">
+                                <input class="text-box single-line" data-val="true" data-val-required="Description is Required" id="Description" name="Description" type="text" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style=" float: left;width: 500px;">
+                            <label class="name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Name : </label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 410px;">
+                                <input class="text-box single-line" id="Name" name="Name" type="text" value="Travis Martin">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style=" float: left;width: 570px;">
+                            <label class="name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Date : </label>
+                            <div class="name-text " style="  padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 506px;">
+                                <input class="text-box single-line" data-val="true" data-val-date="The field Date must be a date." data-val-required="Date is Required" id="Date" name="Date" type="datetime" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style="float: left; width: 500px; margin-bottom: 0px;">
+                            <label class="name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Week Ending :</label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 330px;">
+                                <input class="text-box single-line" data-val="true" data-val-date="The field Week must be a date." data-val-required="Week Ending Date is Required" id="Week" name="Week" type="datetime" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Week" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style=" float: left;width: 270px;  margin-bottom: 22px;  margin-top: 0px;">
+                            <label class=" name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">Start Weight :</label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 100px;">
+                                <input class="text-box single-line" data-val="true" data-val-regex="Start Weight must be numeric" data-val-regex-pattern="^[0-9]*$" id="Start_Weight" name="Start_Weight" type="text" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Start_Weight" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group " style=" float: left; margin-bottom: 22px; margin-top: 0px; width: 284px; margin-left: 13px;">
+                            <label class="name-btn" style="font-family: arial; font-size: 19px; color: rgb(0, 0, 0); float: left; text-transform: uppercase; font-weight: 600;">End Weight :</label>
+                            <div class="name-text" style=" padding-left: 9px; float: left; border-bottom: 2px solid rgb(0, 0, 0); font-family: arial; line-height: 28px; width: 151px;">
+                                <input class="text-box single-line" data-val="true" data-val-regex="End Weight must be numeric" data-val-regex-pattern="^[0-9]*$" id="End_Weight" name="End_Weight" type="text" value="">
+                            </div>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="End_Weight" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="meal-section" style="float: left;width: 100%;">
+                        <div class="form-group header-title" style="float:left; width: 530px; margin: 0 10px;">
+                            <h1 style="border-radius: 5px;color: #000;font-family: arial;font-size: 29px;font-weight: 800;margin-top: 9px; padding: 17px 17px 0;text-align: center !important;text-transform: uppercase;">Currently Eat</h1>
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">BreakFast:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_BreakFast1" name="Current_BreakFast1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_BreakFast2" name="Current_BreakFast2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_BreakFast3" name="Current_BreakFast3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style="float:left;width: 530px; margin: 0 10px;">
+                            <h1 style="border-radius: 5px;color: #000;font-family: arial;font-size: 29px;font-weight: 800;margin-top: 9px; padding: 17px 17px 0;text-align: center !important;text-transform: uppercase;">New Lifestyle</h1>
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">BreakFast:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_BreakFast1" name="New_BreakFast1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_BreakFast2" name="New_BreakFast2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_BreakFast3" name="New_BreakFast3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Lunch:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Lunch1" name="Current_Lunch1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Lunch2" name="Current_Lunch2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Lunch3" name="Current_Lunch3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Lunch:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Lunch1" name="New_Lunch1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Lunch2" name="New_Lunch2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Lunch3" name="New_Lunch3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Dinner:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Dinner1" name="Current_Dinner1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Dinner2" name="Current_Dinner2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Dinner3" name="Current_Dinner3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Dinner:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Dinner1" name="New_Dinner1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Dinner2" name="New_Dinner2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Dinner3" name="New_Dinner3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Snacks/Cravings:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Snacks_Craving1" name="Current_Snacks_Craving1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Snacks_Craving2" name="Current_Snacks_Craving2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="Current_Snacks_Craving3" name="Current_Snacks_Craving3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group header-title" style=" float:left;width: 530px; margin: 0 10px;">
+                            <div class="form-group col-lg-12 p-0">
+                                <label style="color: #000;font-family: arial;font-size: 17px;font-weight: 600;margin-left: 12px;text-transform: uppercase;">Snacks/Cravings:</label>
+                                <div class="col-lg-12 category-list p-0">
+                                    <ul style="list-style-type: decimal; padding-left: 15px;">
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family: arial;margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Snacks_Craving1" name="New_Snacks_Craving1" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family:arial; margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Snacks_Craving2" name="New_Snacks_Craving2" type="text" value="">
+                                        </li>
+                                        <li style="border: 2px solid #000;color: #000 !important;font-family:arial; margin-bottom: -2px;padding: 9px;">
+                                            <input class="text-box single-line" id="New_Snacks_Craving3" name="New_Snacks_Craving3" type="text" value="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="note ">
+                            <div class="form-group">
+                                <label style="color: #000;font-family: arial; font-size:17px;font-weight: 600;margin-left: 0px;text-transform: uppercase;">Notes:</label>
+                                <div class=" category-list" style=" margin-bottom: 16px !important;margin-top: 1px;">
+                                    <textarea cols="20" id="Note" name="Note" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 save-data pl-1">
+                            <button class="btn btn-primary" type="submit" id="btnSubmit">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+    <div class="modal" id="joinourModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <iframe id="iFrame" name="iFrame" src="https://lp.constantcontact.com/su/ctLZM0b/subscribe" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+    <script src="/Scripts/jquery.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('input[type=datetime]').datepicker({
+                dateFormat: "mm-dd-yyyy",
+                autoclose: true,
+            });
+            window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function() {
+                    $(this).remove();
+                });
+            }, 4000);
+            $(window).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+        $('.userdashboard a').on('click', function() {
+            var MealID = $("#custMealID").val();
+            $.ajax({
+                url: '/Home/GetCustMeals/',
+                type: 'Post',
+                dataType: 'json',
+                data: '{id : ' + JSON.stringify(MealID) + '}',
+                contentType: 'application/json; charset=utf-8',
+                success: function(response) {
+                    var origin = window.location.origin;
+                    window.location.href = origin + '/Home/Index';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

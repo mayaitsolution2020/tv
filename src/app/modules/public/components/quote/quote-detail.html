@@ -1,0 +1,16 @@
+<!-------------------  banner Section ------------------------->
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <!-------------------  Product Section ------------------------>
+        <div class="product_section PinkAffiliate">
+            <!-- <div class="share_button details-page"> <fb-like class="img-share" url={{Image}}></fb-like>   <tweet class="img-share" url={{Image}}></tweet></div> -->
+            <button mat-stroked-button class="common-button" [routerLink]="['/quotes']">Back</button>
+            <div class="col-md-12 main-quotes">
+                <!-- <p><q>{{QuoteDescription}}</q><br><strong>{{QuotesName}}</strong></p> -->
+                <p><q>{{quotedetail?.Description}}</q><br><strong>{{quotedetail?.Title}}</strong></p>
+                <img src="{{baseUrl}}{{quotedetail?.Image}}">
+            </div>
+        </div>
+    </div>
+</section>

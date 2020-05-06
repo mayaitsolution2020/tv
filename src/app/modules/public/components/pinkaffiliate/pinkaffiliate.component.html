@@ -1,0 +1,31 @@
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<!-------------------  banner Section ------------------------->
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <h1 class="ShibbolethAmazonStore pink">Pink Affiliate</h1>
+
+        <!------------------- Search Section ------------------------>
+        <div class="search_form_section">
+            <!-- <form role="search" method="get" class="search-form" action=""> -->
+            <label>
+                <input type="search" class="search-form search-field" placeholder="Search Here …"
+                    [(ngModel)]="searchText">
+                <input type="hidden" name="post_type" value="recommends">
+            </label>
+
+            <!-- </form> -->
+        </div>
+        <!-------------------  Product Section ------------------------>
+        <div class="product_section PinkAffiliate">
+            <div class="col-6"
+                *ngFor="let pink of affiliate | filter:searchText | paginate: { itemsPerPage: 10, currentPage: page}">
+                <a [routerLink]="['/pinkaffiliatesdetail', pink?.ID]">
+                    <img src="{{baseUrl}}{{pink?.Image}}"></a>
+                <h4 class="pinkaffiliate-archieve-post-title">
+                    <a [routerLink]="['/pinkaffiliatesdetail', pink?.ID]">{{pink?.Title}}</a></h4>
+            </div>
+            <pagination-controls (pageChange)="page= $event" class="float-right"></pagination-controls>
+        </div>
+    </div>
+</section>

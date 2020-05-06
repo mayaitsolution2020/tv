@@ -1,0 +1,15 @@
+.ng-star-inserted {
+    width: 100% !important;
+}
+
+img {
+    width: 60px;
+}
+
+.search_table .mat-form-field-wrapper {
+    width: 30%;
+}
+
+
+/* @import "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css";
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"; */

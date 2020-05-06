@@ -1,0 +1,67 @@
+<div class="col-lg-12 mb-4">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Challenges List</h6>
+        </div>
+
+        <div class="form-group col-lg-12 float-left Transfromation_add">
+            <a> <button class="btn btn-primary" type="button" [routerLink]="['/challengesadmin']">
+                    Add Challenges
+                </button>
+            </a>
+        </div>
+        <div class="card-body">
+            <div>
+                <div class="table-responsive">
+                    <mat-form-field class="col-md-12 search_table">
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    </mat-form-field>
+                    <mat-table #table [dataSource]="dataSource" matSort>
+
+                        <ng-container matColumnDef="ID">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>ID </mat-header-cell>
+                            <mat-cell *matCellDef="let challengesList; let i =index">
+                                {{ (i+1) + (paginator.pageIndex*paginator.pageSize) }}</mat-cell>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="ChallengeName">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+                            <mat-cell *matCellDef="let challengesList">{{challengesList.ChallengeName}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Image">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Image </mat-header-cell>
+                            <mat-cell *matCellDef="let challengesList"><img
+                                    src={{baseUrl}}{{challengesList.ChallengeImage}}></mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Status">
+                            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+                            <mat-cell *matCellDef="let challengesList">
+
+                                <mat-checkbox [(ngModel)]="challengesList.IsActive"
+                                    (ngModelChange)="onNgModelChangeEvent(challengesList.IsActive,challengesList.ChallengeName,challengesList.ChallengeImage, challengesList.ID)">
+                                </mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="action">
+                            <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+                            <mat-cell *matCellDef="let challengesList">
+                                <!-- <a class="caseload_goals" [routerLink]="['/transformations',element.ID]"><i class="material-icons"
+                                                                  matTooltip="Edit Product Category">Edit</i></a> -->
+                                <button [routerLink]="['/challengesadmin',challengesList?.ID]"
+                                    class="edit">Edit</button>
+                                <!-- <button (click)="deleteChallange(challengesList.ID)" class="del">Delete</button> -->
+
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                    </mat-table>
+                    <mat-paginator #paginator [pageSizeOptions]="[20, 30, 40]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>

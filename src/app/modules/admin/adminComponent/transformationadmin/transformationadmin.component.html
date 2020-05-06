@@ -1,0 +1,66 @@
+<div class="col-lg-12 mb-4">
+    <form [formGroup]="transformationsForm" (ngSubmit)="onSubmit()">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Add Transformation</h6>
+            </div>
+            <div class="card-body  add_data">
+
+                <div class="form-group col-lg-12 float-left">
+
+                    <!-- <mat-label>Title</mat-label> -->
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Title" formControlName="Title" [(ngModel)]="transformation.Title" [ngClass]="{'is-invalid':submitted && f.Title.errors }">
+                        <mat-error *ngIf="submitted && f.Title.errors" class="invalid-feedback"></mat-error>
+                        <mat-error *ngIf="f.Title.errors?.required">Title is required
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-lg-6 float-left">
+                    <!-- <mat-label>Sort Order</mat-label> -->
+
+                    <mat-form-field class="example-full-width">
+
+                        <input matInput placeholder="Sort Order" formControlName="SortOrder" [(ngModel)]="transformation.SortOrder">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-lg-2 float-left">
+
+                    <input matInput [matDatepicker]="picker1" placeholder="Published Date" [(ngModel)]="transformation.PublishedDate" formControlName="PublishedDate" [value]="Date.value" [ngClass]="{'is-invalid':submitted && f.PublishedDate.errors }">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+
+
+                </div>
+                <!-- <div class="form-group col-lg-6 float-left">
+                    <input matinput placeholder="Start Date" formControlName="PublishedDate" [(ngModel)]="transformation.PublishedDate" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1">
+                    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+
+
+                </div> -->
+                <div class="row col-md-12">
+                    <div class="col-md-3">
+                        <mat-label>Upload an image:</mat-label>
+                        <input matFileUpload type="file" (change)="handleFileInput($event.target.files)" id="fupUploadPhoto" accept=".png, .jpg,
+                         .jpeg" class="inputfile" formControlName="Image" [(ngModel)]="transformation.Image" />
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group ">
+                            <img *ngIf="transformation?.Image" src="{{baseUrl}}{{transformation?.Image}}">
+                            <!-- <img id="imgPostImagePreview" src="{{ImagePath}}" /> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 send_data">
+                <button mat-raised-button type=submit type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <!-- (click)="onSubmit()" -->
+        </div>
+
+
+
+    </form>
+</div>

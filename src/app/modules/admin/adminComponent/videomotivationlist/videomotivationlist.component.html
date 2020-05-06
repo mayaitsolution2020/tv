@@ -1,0 +1,75 @@
+<div class="col-lg-12 mb-4">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"> Motivation Video List</h6>
+        </div>
+
+        <div class="form-group col-lg-12 float-left Transfromation_add">
+            <a> <button class="btn btn-primary" type="button" [routerLink]="['/videomotivation']">
+                   Add Motivation Video
+                  </button>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <mat-form-field class="col-md-12 search_table">
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                </mat-form-field>
+                <mat-table #table [dataSource]="dataSource" matSort>
+
+                    <ng-container matColumnDef="ID">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>ID </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList; let i =index">
+                            {{ (i+1) + (paginator.pageIndex*paginator.pageSize) }}</mat-cell>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Title">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList">{{videoList.Title}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="Image">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Image </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList"><img src={{baseUrl}}{{videoList.Prerecord_Video_Image}}></mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="SortOrder">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Sort Order </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList">{{videoList.SortOrder}}</mat-cell>
+                    </ng-container>
+
+                    <!-- <ng-container matColumnDef="StartDate">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList">{{videoList.StartDate}}</mat-cell>
+                    </ng-container> -->
+                    <!-- <ng-container matColumnDef="EndDate">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> End Date </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList">{{videoList.EndDate}}</mat-cell>
+                    </ng-container> -->
+                    <!--                              
+              <ng-container matColumnDef="ExpiresDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ExpiresDate </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.ExpiresDate}}</mat-cell> 
+            </ng-container>
+             -->
+
+
+
+                    <ng-container matColumnDef="Action">
+                        <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+                        <mat-cell *matCellDef="let videoList">
+                            <!-- <a class="caseload_goals" [routerLink]="['/transformations',element.ID]"><i class="material-icons"
+                        matTooltip="Edit Product Category">Edit</i></a> -->
+                            <button [routerLink]="['/videomotivation',videoList.VideoID]" class="edit">Edit</button>
+                            <button (click)="deletevideo(videoList.VideoID)" class="del">Delete</button>
+
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                </mat-table>
+                <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

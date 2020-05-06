@@ -1,0 +1,6 @@
+.dropdown-menu.show a {
+    color: #000 !important;
+}
+li.nav-item.dropdown a {
+    color: #fff;
+}

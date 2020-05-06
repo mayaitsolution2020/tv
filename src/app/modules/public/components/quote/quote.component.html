@@ -1,0 +1,58 @@
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<!-------------------  banner Section ------------------------->
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <!-------------------  Product Section ------------------------>
+        <div class="product_section PinkAffiliate">
+            <!------------------- Search Section ------------------------>
+            <div class="search_form_section">
+                <!-- <form role="search" method="get" class="search-form" action=""> -->
+                <label>
+                    <input type="search" class="search-form search-field" placeholder="Search Here …"
+                        [(ngModel)]="searchText">
+                    <input type="hidden" name="post_type" value="recommends">
+                </label>
+                <h2
+                    style="text-align: center; margin-top: 20px; color: #005dff;text-transform: uppercase;font-weight: 600; font-family: arial;">
+                    {{categoryName}}
+                </h2>
+                <!-- <button type="submit" (click)="transformationSearch()" class="search-submit">Search</button> -->
+                <!-- </form> -->
+            </div>
+            <!-- <div class="share_button details-page"> <img src="../../../assets/img/fb.png" class="img-share"> <img
+                  src="../../../assets/img/tw.png" class="img-share"></div> -->
+
+            <div class="product_section">
+                <ul id="nav" class="menu">
+                    <li class="menu-item menu-item-type-taxonomy">
+                        <a (click)="getAllQuotes()">All Quotes</a>
+                    </li>
+                    <li class="menu-item menu-item-type-taxonomy" *ngFor="let cat of categories ">
+                        <a (click)="getQuoteByCategory(cat?.ID, cat?.QuoteCategory )">{{cat?.QuoteCategory}}</a>
+                    </li>
+                </ul>
+
+                <div class="content-area1">
+                    <div class="tab-quote">
+                        <div class=" col-md-12 banner-bg"
+                            *ngFor="let quotes of allquotes | filter:searchText | paginate: { itemsPerPage: 10, currentPage: page}">
+                            <div class="row" [routerLink]="['/quotesdetail', quotes?.ID]">
+                                <div class="col-md-4 col-sm-4">
+                                    <a>
+                                        <img src="{{baseUrl}}{{quotes?.Image}}">
+                                    </a>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <p><q>{{quotes?.Description}}</q></p>
+                                    <h3>{{quotes?.Title}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

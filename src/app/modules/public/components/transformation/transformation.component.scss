@@ -1,0 +1,36 @@
+.share_button.details-page {
+    overflow: hidden;
+    width: 200px;
+    margin: 0 auto;
+}
+.col-lg-4 {
+    float: left;
+}
+.transformation_box {
+    background: #fff;
+}
+.transformation_box {
+    border: 2px solid#add1fa;
+    padding: 0;
+    box-shadow: 3px 7px 13px -11px rgba(0, 0, 0, 0.75);
+    margin: 9px 0px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+pagination-controls.float-right {
+    width: 100% !important;
+    text-align: center;
+    margin-top: 15px;
+}
+pagination-controls.float-right ul.ngx-pagination li {
+    font-size: 18px;
+    background: #fff;
+    margin: 0 5px;
+    padding: 8px 11px !important;
+    border-radius: 5px !important;
+}
+.search_form_section {
+    float: left;
+    width: 100%;
+}

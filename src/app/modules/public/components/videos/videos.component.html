@@ -1,0 +1,64 @@
+<h1 class="ShibbolethAmazonStore">Video</h1>
+
+<section class="travis_recommend_section">
+    <div class="container">
+
+
+        <ul class="nav nav-tabs side_nav" role="tablist">
+            <li *ngFor="let sel of selectedItem; let first = first;" [ngClass]="{firstItem: first}" role="presentation"
+                class="accounts_li" [class.active]="selectedTab===sel">
+                <a (click)="selectedTab = sel" aria-controls="one" role="tab" data-toggle="tab">{{sel}}</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Motivation videos -->
+            <div class="product_section" *ngIf="selectedTab === selectedItem[0]" role="tabpanel" class="tab-pane active"
+                id="one">
+                <div class="content">
+                    <div class="shop_box podcast_mp3 line-content" id="shop_box1"
+                        *ngFor="let motivation of motivationvideos | paginate: { itemsPerPage: 6, currentPage: page}">
+                        <div class="recommends" (click)="openDialog(motivation?.VideoID)">
+                            <img class="card-img-top" src="{{baseUrl}}{{motivation?.Prerecord_Video_Image}}" alt="">
+                        </div>
+                        <h2>{{motivation?.Title}}
+                        </h2>
+                        <h2 class="Published_date"><span>Start Date </span> {{motivation?.StartDate}}</h2>
+
+                        <!-- <div class="share-icons">
+                            <span>Share </span>
+                            <div class="addtoany_shortcode"><img src="../../../assets/img/ff.jpg"
+                                    class="img-responsive">
+                                <img src="../../../assets/img/tw.jpg" class="img-responsive"></div>
+                        </div> -->
+                    </div>
+                </div>
+                <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+            </div>
+
+            <!-- We fixed it videos -->
+            <div class="product_section" *ngIf="selectedTab === selectedItem[1]" role="tabpanel" class="tab-pane active"
+                id="two">
+                <div class="content">
+                    <div class="shop_box podcast_mp3 line-content" id="shop_box1"
+                        *ngFor="let wefixedit of wefixeditvideos | paginate: { itemsPerPage: 6, currentPage: page}">
+                        <div class="recommends" (click)="openDialog(wefixedit?.VideoID)">
+                            <img class="card-img-top" src="{{baseUrl}}{{wefixedit?.Prerecord_Video_Image}}" alt="">
+                        </div>
+                        <h2>{{wefixedit?.Title}}
+                        </h2>
+                        <h2 class="Published_date"><span>Start Date </span> {{wefixedit?.StartDate}}</h2>
+
+                        <!-- <div class="share-icons">
+                            <span>Share </span>
+                            <div class="addtoany_shortcode"><img src="../../../assets/img/ff.jpg"
+                                    class="img-responsive">
+                                <img src="../../../assets/img/tw.jpg" class="img-responsive"></div>
+                        </div> -->
+                    </div>
+                </div>
+                <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</section>

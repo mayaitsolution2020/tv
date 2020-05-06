@@ -1,0 +1,78 @@
+<div class="col-lg-12 mb-4">
+    <!-- <form ngSubmit="onSubmit()"> -->
+    <form [formGroup]="classMeetingForm" (ngSubmit)="onSubmit()">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Add Class</h6>
+            </div>
+            <div class="card-body  add_data">
+
+                <div class="form-group col-lg-12 float-left">
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Title" formControlName="Title" [(ngModel)]="classmeeting.Title" [ngClass]="{'is-invalid':submitted && f.Title.errors }">
+                        <mat-error *ngIf="submitted && f.Title.errors" class="invalid-feedback"></mat-error>
+                        <mat-error *ngIf="f.Title.errors?.required">Title is required
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-lg-12 float-left">
+                    <!-- <mat-label>Sort Order</mat-label> -->
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Description" formControlName="Description" [(ngModel)]="classmeeting.Description" [ngClass]="{'is-invalid':submitted && f.Description.errors }">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-lg-12 float-left">
+                    <!-- <mat-label>Sort Order</mat-label> -->
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Webinar Link" formControlName="WebinarLink" [(ngModel)]="classmeeting.WebinarLink" [ngClass]="{'is-invalid':submitted && f.WebinarLink.errors }">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-lg-6 float-left">
+                    <!-- <mat-label>Sort Order</mat-label> -->
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Sort Order" formControlName="SortOrder" [(ngModel)]="classmeeting.SortOrder" [ngClass]="{'is-invalid':submitted && f.SortOrder.errors }">
+                    </mat-form-field>
+                </div>
+                <!-- <div class="form-group col-lg-6 float-left">
+                    <input matInput [matDatepicker]="picker" placeholder="Start Date" formControlName="PublishedDate"
+                        [(ngModel)]="classmeeting.PublishedDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+
+                </div> -->
+                <div class="form-group col-lg-6 float-left">
+                    <input matinput placeholder="Start Date" formControlName="PublishedDate" [(ngModel)]="classmeeting.PublishedDate" [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
+                    <owl-date-time [pickerMode]="'dialog'" #dt5></owl-date-time>
+
+                </div>
+                <div class="row col-md-12">
+                    <div class="col-md-3">
+                        <mat-label>Upload an image:</mat-label>
+                        <input matFileUpload type="file" (change)="handleFileInput($event.target.files)" id="fupUploadPhoto" accept=".png, .jpg,
+                       .jpeg" class="inputfile" formControlName="Image" [(ngModel)]="classmeeting.Image" />
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+
+                            <img *ngIf="classmeeting.Image" src="{{baseUrl}}{{classmeeting?.Image}}">
+                            <!-- <img id="imgPostImagePreview" src="{{ImagePath}}" /> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 send_data">
+                <button mat-raised-button type=submit type="submit" clicked=true; [disabled]="clicked" class="btn btn-primary">Submit</button>
+            </div>
+            <!-- (click)="onSubmit()" -->
+
+        </div>
+
+
+
+    </form>
+</div>

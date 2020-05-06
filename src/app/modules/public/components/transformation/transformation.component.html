@@ -1,0 +1,36 @@
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <h1 class="ShibbolethAmazonStore">transformation</h1>
+
+        <!------------------- Search Section ------------------------>
+        <div class="search_form_section">
+
+            <!-- <form role="search" method="get" class="search-form" action=""> -->
+            <label>
+                <input type="search" class="search-form search-field" placeholder="Search Here …"
+                    [(ngModel)]="searchText">
+                <input type="hidden" name="post_type" value="recommends">
+            </label>
+            <!-- <button type="submit" (click)="transformationSearch()" class="search-submit">Search</button> -->
+            <!-- </form> -->
+        </div>
+        <!-------------------  Product Section ------------------------>
+        <div class="product_section transformation"
+            *ngFor="let trans of transformation | filter:searchText | paginate: { itemsPerPage: 9, currentPage: page}">
+            <div class="col-lg-4 mn-3">
+                <div class="transformation_box">
+                    <!-- <a target="_blank" href="http://www.myshibboleth.com/survival-tools/food/water/"> -->
+                    <a target="_blank" [routerLink]="['/detailpage',trans?.ID]">
+                        <img src="{{baseUrl}}{{trans?.Image}}"></a>
+                    <h4 class="testimonie-archieve-post-title">
+                        <!-- <a [routerLink]="['/transformationsdetail', trans?.ID]">{{trans?.Title}}</a> -->
+                        <a [routerLink]="['/detailpage',trans?.ID]">{{trans?.Title}}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<!-------------------  banner Section ------------------------->
+<section class="travis_recommend_section">
+    <div class="container">
+        <h1 class="ShibbolethAmazonStore">Shibboleth Amazon Store</h1>
+        <!-------------------  Product Section ------------------------>
+        <button mat-stroked-button class="common-button" [routerLink]="['/products']">Back</button>
+        <div class="product_section">
+
+            <div class="shop_box" id="shop_box1">
+
+                <div class="recommends product_left_section">
+                    <a target=" _blank" href="{{AmazonLink}}"><img class="card-img-top" src="{{baseUrl}}{{Image}}" alt=""></a>
+                </div>
+                <div class="product_right_section">
+                    <!-- <div class="share_button details-page"> <img src="../../../assets/img/fb.png" class="img-share"> <img src="../../../assets/img/tw.png" class="img-share"></div> -->
+                    <!-- <div class="share_button details-page"> <fb-like class="img-share" url={{AmazonLink}}></fb-like>   <tweet class="img-share" url={{AmazonLink}} text={{Title}}></tweet></div> -->
+                    <h2><a target=" _blank" href="#" maxlength="10">{{Title}}</a></h2>
+                    <div class="recommend-content">
+                        <p id="title" class="a-size-large a-spacing-none"><span id="Title" class="a-size-large">{{Description}}</span></p>
+                        <h2 class="Shop_now_btn"><a href="{{AmazonLink}}"> SHOP NOW</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

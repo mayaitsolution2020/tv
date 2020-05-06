@@ -1,0 +1,16 @@
+.common-button.mat-stroked-button {
+    float: left;
+    left: -1px !important;
+    z-index: 9999;
+}
+.loading {
+    text-align: center;
+    float: left;
+    width: 100%;
+    top: 424px;
+    position: absolute;
+    z-index: 9999999;
+    color: red;
+    font-size: 22px;
+    font-weight: 600;
+}

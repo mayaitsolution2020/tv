@@ -1,0 +1,29 @@
+<section class="travis_recommend_section">
+  <share-button [theme]="'modern-dark'" [button]="'facebook'" [size]="-2" [url]="'https://travismartin.tv'"
+    [autoSetMeta]="false" [image]='imm'></share-button>
+  <div class="product_section PinkAffiliate">
+
+    <!-- <div class="fb-share-button" [attr.href]='baseUrl + transformation?.Image' data-layout="button_count"
+      data-size="small">
+      <a [href]="'https://www.facebook.com/sharer/sharer.php?u=https://travismartin.tv/&redirect_uri=https://travismartin.tv/&src='+ imm +'&app_id=233730411073769'"
+        class="fb-xfbml-parse-ignore">Share</a>
+    </div> -->
+
+    <!-- <div class="fb-share-button" [attr.href]='baseUrl + transformation?.Image' data-layout="button_count"
+          data-size="small">
+          <a [href]="'https://www.facebook.com/sharer/sharer.php?u=' + imm"
+              class="fb-xfbml-parse-ignore">Share</a>
+      </div> -->
+
+    <!-- <div class="share_button details-page">
+          <fb-like class="img-share" url="{{baseUrl}}{{transformation?.Image}}"></fb-like>
+          <tweet class="img-share" url="{{baseUrl}}{{transformation?.Image}}"></tweet>
+      </div> -->
+    <button mat-stroked-button class="common-button" [routerLink]="['/transformations']">Back</button>
+    <main class="site-main testimonie">
+      <img src="{{baseUrl}}{{transformation?.Image}}">
+    </main>
+  </div>
+
+
+</section>

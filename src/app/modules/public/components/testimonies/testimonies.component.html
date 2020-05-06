@@ -1,0 +1,26 @@
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<section class="travis_recommend_section">
+    <div class="container">
+
+        <h1 class="ShibbolethAmazonStore">Testimony</h1>
+
+        <div class="search_form_section">
+
+            <label>
+                <input type="search" class="search-form search-field" placeholder="Search Here …"
+                    [(ngModel)]="searchText">
+                <input type="hidden" name="post_type" value="recommends">
+            </label>
+
+            <div class="product_section testimonie"
+                *ngFor="let test of testimonie | filter:searchText | paginate: { itemsPerPage: 10, currentPage: page}">
+                <div class="col-6">
+                    <a [routerLink]="['/trans', test?.ID]">
+                        <img src="{{baseUrl}}{{test?.Image}}"></a>
+                    <h4 class="testimonie-archieve-post-title">
+                        <a [routerLink]="['/trans', test?.ID]">{{test?.Title}}</a>
+                    </h4>
+                </div>
+            </div>
+            <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+        </div>

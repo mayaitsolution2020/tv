@@ -1,0 +1,497 @@
+body {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.66;
+    margin: 0px;
+    padding: 0px;
+    background: #EAEDED;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.travis_new_herder_user {
+    background-color: #007aff;
+    color: white;
+    padding: 3px 0;
+    overflow: hidden;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid #1874d8;
+}
+
+ul.logo_main_user {
+    width: 25%;
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.logo_menu {
+    float: right;
+    width: 35%;
+    line-height: normal;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    margin-top: 22px;
+}
+
+ul.logo_menu li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+ul.logo_menu li a {
+    background: #f0ad4e;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 27px;
+    font-family: arial;
+    border-radius: 3px;
+}
+
+ul.logo_menu li a {
+    background: #f0ad4e;
+    text-decoration: none;
+    color: #fff;
+    padding: 7px 27px;
+    font-family: arial;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+ul.logo_menu li button.btn.btn-brown.logout {
+    background: #000;
+    color: #fff;
+    border: 2px solid #79aee8;
+    color: #fff;
+    padding: 7px 27px;
+    font-family: arial;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+ul.travis_media_share {
+    float: right;
+    padding: 0;
+    width: 37%;
+    text-align: right;
+    margin: 0;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+ul.travis_media_share li a {
+    color: #fff;
+}
+
+ul.travis_media_share li {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 100%;
+    color: #007aff;
+    height: 35px;
+    width: 35px;
+    vertical-align: top;
+}
+
+ul.travis_media_share li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.fa.fa-whatsapp {
+    font-size: 37px;
+    margin-right: 10px;
+}
+
+ul.travis_media_share .bg-color .fa {
+    color: #007aff;
+    font-size: 20px;
+    padding: 8px;
+    text-align: center;
+}
+
+li.whatapp {
+    background: none !important;
+}
+
+ul.travis_media_share p {
+    font-size: 21px;
+    font-family: arial;
+    margin: 0;
+}
+
+.Profile-tab-tools ul {
+    list-style: outside none none;
+    padding: 0;
+    text-align: center;
+    margin-top: 43px;
+}
+
+.Profile-tab-tools ul li {
+    border: 3px solid #fff;
+    border-radius: 6px;
+    box-shadow: -1px 0 11px -3px rgba(0, 0, 0, 0.45);
+    display: inline-block;
+    height: 240px;
+    margin: 0 11px;
+    padding: 3px 5px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    vertical-align: top;
+    width: 200px;
+    padding-top: 29px;
+}
+
+.Profile-tab-tools ul li a {
+    text-decoration: none;
+}
+
+.icon-bg {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 100%;
+    box-shadow: 8px 19px 34px -11px rgba(0, 0, 0, 0.45);
+    height: 85px;
+    margin: 17px auto 20px;
+    width: 85px;
+}
+
+.Profile-tab-tools li i.fa {
+    transition: all 0.3s ease 0s !important;
+}
+
+.fa.fa-user {
+    color: #8f8df2;
+    font-size: 50px;
+    padding-top: 14px;
+}
+
+.title-tab {
+    color: #000;
+    font-family: "Helvetica Neue", "Libertation Sans", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.fa.fa-pencil-square-o {
+    color: #92e6ba;
+    font-size: 50px;
+    padding-top: 14px;
+}
+
+.fa.fa-book {
+    font-size: 43px;
+    padding-top: 19px;
+}
+
+.Profile-tab-tools ul li:hover {
+    background: #30aaff none repeat scroll 0 0 !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.Profile-tab-tools ul li:nth-child(1) {
+    background: #908ef3 none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(2) {
+    background: #edca52 none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(3) {
+    background: #92e6ba none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(4) {
+    background: #2ab5c3 none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(5) {
+    background: #ff5377 none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(6) {
+    background: #67b374 none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(7) {
+    background: #e6674a none repeat scroll 0 0;
+}
+
+.Profile-tab-tools ul li:nth-child(8) {
+    background: #007aff none repeat scroll 0 0;
+}
+
+.meal-challenge_main {
+    border-radius: 8px;
+    box-shadow: -1px 2px 12px 0 rgba(0, 0, 0, 0.35);
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px !important;
+    overflow: hidden;
+    padding: 15px;
+    width: 95%;
+    background: #fff;
+}
+
+h1.member_title {
+    text-align: center;
+    margin-bottom: 0;
+    color: #007AFF;
+    text-transform: uppercase;
+    margin-top: 42px;
+    font-family: arial;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.container-fluid {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.meal-challenge_main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+li.deactive_challenge {
+    filter: blur(1px);
+    border: 2px solid #ec8080 !important;
+}
+
+li.deactive_challenge img {
+    filter: blur(1px);
+}
+
+li.deactive_challenge a {
+    filter: blur(1px);
+}
+
+.meal-challenge_main ul li {
+    /* box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2); */
+    width: 31%;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 23px;
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 12px;
+    float: left;
+    text-align: center;
+    padding-bottom: 29px;
+    min-height: 385px;
+    border: 2px solid #23f523;
+}
+
+a.vc_btn3 {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 2px solid #0059a8;
+    border-radius: 6px;
+    color: #0059a8;
+    font-family: arial;
+    font-weight: 600;
+    padding: 12px 31px;
+    text-decoration: none;
+}
+
+a.vc_btn3:hover {
+    background: #0059a8 !important;
+    border: 2px solid #0059a8 !important;
+    color: #fff !important;
+}
+
+.meal-challenge_main ul li img {
+    width: 100%;
+    padding: 0;
+    border-radius: 7px;
+    margin-bottom: 21px;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    ul.logo_main_user {
+        width: 100% !important;
+        float: left;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        padding-top: 14px;
+    }
+    ul.logo_menu {
+        float: right;
+        width: 100% !important;
+        line-height: normal;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        margin-top: 10px;
+        text-align: center;
+        margin-bottom: 17px;
+    }
+    ul.logo_menu li button.btn.btn-brown.logout {
+        padding: 7px 13px;
+        font-size: 12px;
+    }
+    ul.logo_menu li a {
+        padding: 7px 5px;
+        font-size: 12px;
+    }
+    ul.logo_menu li {
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .Profile-tab-tools ul li {
+        width: 80%;
+        margin-bottom: 16px;
+    }
+    h1.member_title {
+        text-align: center;
+        margin-bottom: 0;
+        color: #007AFF;
+        text-transform: uppercase;
+        margin-top: 13px;
+        font-family: arial;
+        margin-bottom: 18px;
+        font-weight: 600;
+    }
+    .meal-challenge_main ul li {
+        /* box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2); */
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 23px;
+        display: inline-block;
+        margin-left: 12px;
+        margin-right: 12px;
+        float: left;
+        text-align: center;
+        padding-bottom: 29px;
+        min-height: 100% !important;
+        border: 2px solid #23f523;
+        margin: 0 !important;
+        margin-bottom: 17px !important;
+    }
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    ul.logo_menu {
+        float: right;
+        width: 57%;
+        line-height: normal;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        margin-top: 22px;
+        text-align: right;
+        padding-right: 17px;
+    }
+    .meal-challenge_main ul li {
+        /* box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2); */
+        width: 29%;
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+        display: inline-block;
+        margin-left: 12px;
+        margin-right: 12px;
+        float: none;
+        text-align: center;
+        padding-bottom: 39px;
+        min-height: 230px;
+        border: 2px solid #23f523;
+        vertical-align: top;
+        margin-top: 14px;
+    }
+    .meal-challenge_main ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        text-align: center !important;
+    }
+    a.vc_btn3 {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: 2px solid #0059a8;
+        border-radius: 6px;
+        color: #0059a8;
+        font-family: arial;
+        font-weight: 600;
+        padding: 9px 10px;
+        text-decoration: none;
+        font-size: 13px;
+    }
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1300px) {
+    ul.logo_menu {
+        float: right;
+        width: 57%;
+        line-height: normal;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        margin-top: 22px;
+        text-align: right;
+        padding-right: 17px;
+    }
+    .meal-challenge_main ul li {
+        /* box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2); */
+        width: 29%;
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+        display: inline-block;
+        margin-left: 12px;
+        margin-right: 12px;
+        float: none;
+        text-align: center;
+        padding-bottom: 39px;
+        min-height: 230px;
+        border: 2px solid #23f523;
+        vertical-align: top;
+        margin-top: 14px;
+    }
+    .meal-challenge_main ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        text-align: center !important;
+    }
+    a.vc_btn3 {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: 2px solid #0059a8;
+        border-radius: 6px;
+        color: #0059a8;
+        font-family: arial;
+        font-weight: 600;
+        padding: 9px 10px;
+        text-decoration: none;
+        font-size: 13px;
+    }
+}

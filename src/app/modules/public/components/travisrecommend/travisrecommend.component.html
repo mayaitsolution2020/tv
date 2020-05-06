@@ -1,0 +1,56 @@
+<!-------------------  banner Section ------------------------->
+<section class="travis_recommend_section">
+    <div class="container">
+        <h1 class="ShibbolethAmazonStore">Shibboleth Amazon Store</h1>
+        <!------------------- Search Section ------------------------>
+        <div class="search_form_section">
+            <!-- <form role="search" method="get" class="search-form" action=""> -->
+            <label>
+                <input type="search" class="search-form search-field" placeholder="Search Here …"
+                    [(ngModel)]="searchText">
+                <input type="hidden" name="post_type" value="recommends">
+            </label>
+            <h2
+                style="text-align: center; margin-top: 20px; color: #005dff;text-transform: uppercase;font-weight: 400; font-family: arial;">
+                Category :<b></b>{{productCategory}}
+            </h2>
+            <!-- <button type="submit" (click)="productSearch()" class="search-submit">Search</button> -->
+            <!-- </form> -->
+        </div>
+
+
+        <!-------------------  Product Section ------------------------>
+        <div class="product_section">
+
+
+
+            <ul id="nav" class="menu">
+                <h2
+                    style="text-align: left;margin-top: 9px;color: #005dff;text-transform: uppercase;font-weight: 600;font-family: arial;font-size: 15px;margin-left: 12px;">
+                    Select Category
+                </h2>
+                <li class="menu-item menu-item-type-taxonomy">
+                    <a (click)="getAllProduct()">All Products</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy" *ngFor="let cat of categories">
+                    <a (click)="getProductInfo(cat?.ID, cat?.Title)">{{cat?.Title}}</a>
+                </li>
+            </ul>
+            <div class="content-area1">
+                <!-------------------  Product Column --------------------------->
+                <div class="product_gird"
+                    *ngFor="let product of products | filter:searchText | paginate: { itemsPerPage: 12, currentPage: p}">
+                    <div class="product_img"><img src="{{baseUrl}}{{product?.Image}}"></div>
+                    <div class="product_title"><a
+                            [routerLink]="['/productdetail', product?.ID]">{{product?.Title | truncate : 60}}</a></div>
+                    <div class="description">
+                        <p>{{product?.Description | truncate : 70}}</p>
+                    </div>
+                    <div class="shop_now"><a [routerLink]="['/productdetail', product?.ID]" class="btn shop_button">View
+                            More</a></div>
+                </div>
+                <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</section>

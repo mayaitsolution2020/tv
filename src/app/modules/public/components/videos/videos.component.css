@@ -1,0 +1,54 @@
+ul.nav.nav-tabs.side_nav {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+ul.nav.nav-tabs.side_nav li {
+    width: 200px;
+    float: left;
+    margin-right: 5px;
+    border: none;
+}
+ul.nav.nav-tabs.side_nav li a {
+    background: yellow;
+    border: none;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+.tab-pane {
+    background: #fff;
+    padding: 22px 12px;
+}
+li.accounts_li.active a {
+    background: blue !important;
+    color: #fff !important;
+}
+.shop_box.podcast_mp3 h2.Published_date {
+    width: 100%;
+}
+.shop_box.podcast_mp3 h2 {
+    width: 100%;
+}
+h1.ShibbolethAmazonStore {
+    float: left;
+    width: 100%;
+    margin-top: 24px !important;
+    line-height: 30px;
+    margin-bottom: 4px;
+}
+span {
+    color: #fff !important;
+}
+/******************** Responsive media Css ****************************/
+
+@media (min-width: 320px) and (max-width: 767px) {
+    main.site-main.testimonie img {
+        width: 100%;
+    }
+    
+    .shop_box.podcast_mp3 {
+        margin-bottom: 12px !important;
+    }
+
+}

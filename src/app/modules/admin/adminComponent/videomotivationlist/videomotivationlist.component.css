@@ -1,0 +1,11 @@
+ng-star-inserted {
+    width: 100% !important;
+}
+
+img {
+    width: 60px;
+}
+
+.search_table .mat-form-field-wrapper {
+    width: 30%;
+}

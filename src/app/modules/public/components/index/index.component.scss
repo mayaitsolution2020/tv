@@ -1,0 +1,122 @@
+.live_class_left_side {
+    overflow: hidden;
+    width: 64%;
+    background: #fff;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    float: left;
+}
+.live_class_left_side .col-lg-6.col-sm-6.portfolio-item.liveclass {
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    padding: 0;
+	width: 100%;
+}
+.live_class_left_side  .col-lg-6.col-sm-6.portfolio-item {
+    padding: 10px;
+    width: 49%;
+    display: inline-block;
+    margin-bottom: 0;
+    padding-right: 0;
+    flex: none;
+
+}
+
+.live_class_right_side {
+    overflow: hidden;
+    width: 34%;
+    float: right;
+    background: #fff;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+h1.top_title.upcomming_class {
+    float: left;
+    width: 100% !important;
+}
+.travis_intro {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    margin-bottom: 17px;
+}
+.sign_up_banner img {
+    width: 100%;
+}
+.main {
+    overflow: hidden;
+    background: #f7f7f7;
+    padding: 18px;
+    border-radius: 9px;
+    padding-top: 33px;
+    padding-bottom: 33px;
+}
+.travis_store h1 {
+    text-align: center;
+    color: #00a0ea;
+    font-family: arial;
+    font-size: 26px;
+}
+.store_product {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.store_product img {
+    width: 63%;
+}
+.store_product h3 {
+    font-size: 20px;
+    padding: 0 15px;
+    margin-top: 0;
+    line-height: 23px;
+    margin-bottom: 17px;
+}
+section.add-section {
+    float: left;
+    width: 100%;
+}
+section.footer-copywrite {
+    float: left;
+    width: 100%;
+    background: #005dff;
+}
+.social-media p {
+    color: #fff;
+}
+.social-media img {
+    border: 2px solid #fff;
+}
+.top_title {
+    background: #00a0ea;
+    text-align: center;
+    color: #fff;
+    font-family: arial;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 6px !important;
+    margin-bottom: 9px;
+    border-radius: 3px;
+}
+h1.top_title.new_class {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width :767px) {
+
+    }
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768) and (max-device-width :1023px) {
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 1024px) and (max-device-width :1199px) {
+
+}

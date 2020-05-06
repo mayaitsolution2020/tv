@@ -1,0 +1,48 @@
+<div class="col-lg-12 mb-4">
+    <form [formGroup]="challengesForm" (ngSubmit)="onSubmit()">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Add Challenges </h6>
+            </div>
+            <div class="card-body add_data">
+                <div class="row  col-lg-12">
+                    <div class="form-group col-lg-12 float-left">
+
+                        <!-- <mat-label>Pinkaffiliate Name</mat-label> -->
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Title" formControlName="ChallengeName" [(ngModel)]="challenges.ChallengeName" [ngClass]="{'is-invalid':submitted && f.ChallengeName.errors }">
+                            <mat-error *ngIf="submitted && f.ChallengeName.errors" class="invalid-feedback"></mat-error>
+                            <mat-error *ngIf="f.ChallengeName.errors?.required">Title is required
+                            </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row col-lg-12">
+                    <div class="col-md-3">
+                        <mat-label>Upload an image:</mat-label>
+                        <input matFileUpload type="file" (change)="handleFileInput($event.target.files)" id="fupUploadPhoto" accept=".png, .jpg,
+                   .jpeg" class="inputfile" formControlName="ChallengeImage" [(ngModel)]="challenges.ChallengeImage" />
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <img *ngIf="challenges?.ChallengeImage" src="{{baseUrl}}{{challenges?.ChallengeImage}}">
+                            <!-- <img id="imgPostImagePreview" src="{{ImagePath}}" /> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 send_data">
+                <button mat-raised-button type=submit type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <!-- (click)="onSubmit()" -->
+
+        </div>
+
+
+
+
+    </form>
+</div>

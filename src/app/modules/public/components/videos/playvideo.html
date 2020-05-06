@@ -1,0 +1,10 @@
+<div *ngIf="loading else loaded">
+	Loading ...
+</div>
+
+<ng-template #loaded>
+	<iframe class="e2e-iframe-trusted-src" width="640" height="390" [src]="Embed_Code"></iframe>
+	</ng-template>
+	<div mat-dialog-actions>
+		<button mat-button (click)="onNoClick()">CLOSE</button>
+	</div>

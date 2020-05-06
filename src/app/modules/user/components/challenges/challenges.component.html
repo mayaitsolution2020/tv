@@ -1,0 +1,20 @@
+<app-user-header></app-user-header>
+<app-usermenu></app-usermenu>
+<div class="tab-profile-section">
+    <div class="wrapper">
+        <h1 class="member_title">Member's Only</h1>
+
+        <div class="meal-challenge_main">
+            <ul>
+                <li *ngFor="let challenge of activeChallenges">
+                    <a target="_blank" routerLink="{{challenge?.RouterLink}}"><img src="{{baseUrl}}{{challenge?.ChallengeImage}}"></a>
+                    <a target="_blank" class=" vc_btn3" routerLink="{{challenge?.RouterLink}}">{{challenge?.ChallengeName}}</a>
+                </li>
+                <li class="deactive_challenge" *ngFor="let challenge of deactiveChallenges">
+                    <a (click)="showMessage()"><img src="{{baseUrl}}{{challenge?.ChallengeImage}}"></a>
+                    <a class=" vc_btn3" (click)="showMessage()">{{challenge?.ChallengeName}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

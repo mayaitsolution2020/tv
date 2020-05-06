@@ -1,0 +1,95 @@
+<!----------------- Top Header Section --------------------------->
+<div class="travis_new_herder">
+    <div class="container">
+        <div class="header-rigth-info">
+            <ul class="media_share">
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/travismartin777"> <img src="../../../assets/img/facebook.png"></a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://twitter.com/travismartintv7"> <img src="../../../assets/img/twitter.png"></a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/travisjack777/"> <img src="../../../assets/img/instagram.png"></a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://shibbolethministry.com/shibbolethapp/"> <img src="../../../assets/img/app.jpg" style="width:50px"></a>
+                </li>
+            </ul>
+            <ul class="travis_information">
+                <li class="call"> <img src="../../../assets/img/support.png"><a href="tel:1-(470) 227-7528">Call Now 1-(470)
+                  227-7528</a></li>
+                <li class="email"> <img src="../../../assets/img/envelope.png"><a href="mailto:info@myshibboleth.com" target="_top">info@myshibboleth.com</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!------------------- Banner Section ------------------------------------->
+<div class="banner-secrion">
+    <img src="../../../assets/img/top_banner2.jpg" class="img-responsive desktop">
+    <img src="../../../assets/img/responsive_banner_main.jpg" class="img-responsive mobile">
+</div>
+
+<!------------------- navigation-wellness-section  ------------------------------------->
+<div class="navigation-wellness-section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+            <div class="collapse navbar-collapse" [ngClass]="{'show': isShown}" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/home']" (click)="isShown = false">Sign up for Class <span
+                        class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/textsignup']" (click)="isShown = false">Text Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/podcasts']" (click)="isShown = false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/videos']" (click)="isShown = false">Videos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Motivation
+                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" [routerLink]="['/transformations']" (click)="isShown = false">Transformation</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="['/testimonies']" (click)="isShown = false">Testimonies</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="['/quotes']" (click)="isShown = false">Quotes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="['/pinkaffiliates']" (click)="isShown = false">Pink
+                        Affiliates</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/products']" (click)="isShown = false">Travis Recommends</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://www.myshibboleth.com/sponsor/travisjack/">TRAVIS
+                     SPECIAL OFFER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/login']" (click)="isShown = false">Member's Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<!------------------- Banner Section ------------------------------------->
+<div class="banner-secrion main_banner ads_section">
+    <div class="container">
+        <a target="_blank" href="http://www.thelifetimemembership.com/"><img src="../.././../../../assets/img/travis_ads.gif" class="img-responsive desktop"></a>
+        <a target="_blank" href="http://www.thelifetimemembership.com/"><img src="../.././../../../assets/img/travis_mobile.gif" class="img-responsive mobile"></a>
+    </div>
+</div>

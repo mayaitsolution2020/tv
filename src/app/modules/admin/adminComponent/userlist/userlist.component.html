@@ -1,0 +1,68 @@
+<div class="col-lg-12 mb-4">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">User List</h6>
+        </div>
+        <!-- <div class="form-group col-lg-12 float-left Transfromation_add">
+            <a><button class="btn btn-primary" type="button" [routerLink]="['/transformationadmin']"> Add Transfromation  
+                      </button>
+                      </a>
+
+        </div> -->
+        <div class="card-body">
+            <div>
+                <div class="table-responsive">
+                    <mat-form-field class="col-md-12 search_table">
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    </mat-form-field>
+                    <mat-table #table [dataSource]="dataSource" matSort>
+
+                        <ng-container matColumnDef="ID">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>ID </mat-header-cell>
+                            <mat-cell *matCellDef="let transformationList; let i =index">
+                                {{ (i+1) + (paginator.pageIndex*paginator.pageSize) }}</mat-cell>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="Username">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>User Name </mat-header-cell>
+                            <mat-cell *matCellDef="let userList">{{userList.UserName}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Image">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Image </mat-header-cell>
+                            <mat-cell *matCellDef="let userList"><img src={{baseUrl}}{{userList.Image}}></mat-cell>
+                        </ng-container>
+                        <!-- <ng-container matColumnDef="PublishedDate">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header> Published Date </mat-header-cell>
+                          <mat-cell *matCellDef="let transformationList">{{transformationList.PublishedDate}}</mat-cell>
+                      </ng-container> -->
+                        <ng-container matColumnDef="Email">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                            <mat-cell *matCellDef="let userList">{{userList.Email}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Status">
+                            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+                            <mat-cell *matCellDef="let userList">
+
+                                <mat-checkbox [(ngModel)]="userList.Status" (ngModelChange)="deleteUser(userList.ID)"></mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Action">
+                            <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+                            <mat-cell *matCellDef="let userList">
+                                <button [routerLink]="['/user',userList.ID]" class="edit">Edit</button>
+                                <!-- <mat-checkbox [(ngModel)]="userList.Status" (ngModelChange)="deleteUser(userList.ID)">Status</mat-checkbox> -->
+                                <!-- <button (click)="deleteUser(userList.ID)" class="del">Status</button> -->
+
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                    </mat-table>
+                    <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
